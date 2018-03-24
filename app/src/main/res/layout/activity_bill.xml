@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_bill"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context="com.example.android.coffee.Bill">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#E32636"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin">
+    <TextView
+        android:id="@+id/txnId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="@string/transaction_id_10568807570"
+        android:textAppearance="?android:textAppearanceLarge"/>
+
+    <TextView
+        android:id="@+id/Bill_Text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txnId"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp"
+        android:text="@string/total_bill"
+        android:textAppearance="?android:textAppearanceMedium"
+        android:textColor="@android:color/white"/>
+
+    <TextView
+        android:id="@+id/bill_amount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/Bill_Text"
+        android:layout_centerHorizontal="true"
+        android:textSize="64sp"
+        android:textColor="@android:color/white"/>
+    </RelativeLayout>
+
+    <RadioGroup
+        android:id="@+id/payment_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:padding="8dp">
+
+        <RadioButton
+            android:id="@+id/cod"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cash_on_delivery"
+            android:layout_margin="2dp"/>
+
+        <RadioButton
+            android:id="@+id/creditCard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/credit_card"
+            android:layout_margin="2dp"/>
+
+        <RadioButton
+            android:id="@+id/debitCard"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/debit_card"
+            android:layout_margin="2dp"/>
+
+        <RadioButton
+            android:id="@+id/wallet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/online_wallet"
+            android:layout_margin="2dp"/>
+    </RadioGroup>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/card_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:text=""
+            android:textSize="16sp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true" />
+
+        <EditText
+            android:id="@+id/card_number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:layout_toRightOf="@id/card_text"
+            android:textSize="16sp"
+            tools:ignore="LabelFor,RtlHardcoded"
+            android:inputType="numberSigned"
+            android:maxLines="1"/>
+
+        <TextView
+            android:id="@+id/holder_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:layout_below="@id/card_text"
+            android:text=""
+            android:textSize="16sp"/>
+
+        <EditText
+            android:id="@+id/holder_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/holder_text"
+            android:layout_below="@id/card_number"
+            android:padding="8dp"
+            android:textSize="16sp"
+            android:inputType="textPersonName"
+            android:maxLines="1"
+            tools:ignore="LabelFor" />
+
+        <TextView
+            android:id="@+id/expiry_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:layout_below="@id/holder_text"
+            android:text=""
+            android:textSize="16sp"/>
+
+        <EditText
+            android:id="@+id/expiry_month"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/holder_text"
+            android:layout_below="@id/holder_name"
+            android:padding="8dp"
+            android:textSize="16sp"
+            android:inputType="number"
+            android:maxLines="1"
+            android:hint="@string/mm"/>
+
+        <EditText
+            android:id="@+id/expiry_year"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/expiry_month"
+            android:layout_below="@id/holder_name"
+            android:padding="8dp"
+            android:textSize="16sp"
+            android:inputType="number"
+            android:maxLines="1"
+            android:hint="@string/yyyy"/>
+
+        <TextView
+            android:id="@+id/cvv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:layout_below="@id/expiry_text"
+            android:text=""
+            android:textSize="16sp"/>
+
+        <EditText
+            android:id="@+id/cvv_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/holder_text"
+            android:layout_below="@id/expiry_text"
+            android:padding="8dp"
+            android:textSize="16sp"
+            android:inputType="number"
+            android:hint="***"
+            android:maxLines="1"
+            tools:ignore="LabelFor" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/confirm_payment"
+        android:background="#E32636"
+        android:layout_alignParentBottom="true"/>
+
+    </RelativeLayout>
+
+</LinearLayout>
